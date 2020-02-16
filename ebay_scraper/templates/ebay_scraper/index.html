@@ -12,11 +12,12 @@
                 <!-- speech class will be used in CSS -->
                 <div class="col-xs-11 col-sm-8 col-md-6 col-lg-4 mx-auto speech">
                     <input type="text" name="item" class="form-control" id="transcript" required placeholder="Search items">
+                    <img onclick="startDictation()" src="{% static 'images/mic.png' %}" />
                 </div>
             </div>
             
             <div class="row">
-                <div class="col-md-4 mx-auto text-center price-range">Price range (optional):</div>
+                <div class="col-md-4 mx-auto text-center price-range" style="margin-bottom: 0px; margin-top: 10px;">Price range (optional):</div>
             </div>
             <div class="row">
                     <div class="col-xs-2 col-sm-4 col-md-3 col-lg-2 ml-auto pt-2">
@@ -41,7 +42,7 @@
             <!-- Go through and display the scraped items -->
             {% for item in items %}
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 pb-2 d-flex align-items-stretch justify-content-center">
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 18rem; border: solid 1px black">
                     <a href="{{item.link}}" target="_blank"><img class="card-img-top" src="{{ item.image }}" alt="Card image cap"></a>
                     <div class="card-body">
                         <h5 class="card-title"><a href="{{item.link}}" target="_blank">{{ item.name }}</a></h5>
